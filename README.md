@@ -3,25 +3,42 @@
   <a href="#contribute">Contribute to the library</a>
 </p>
 
-<img width="785" alt="Screen Shot 2022-06-01 at 12 26 54" src="https://user-images.githubusercontent.com/83510798/171383999-f281247a-a5c3-47f1-98b2-d926412758a5.png">
+<img height="30" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
 
 # Learning AI optimization
-This repository contains a curated list of excellent material that will help you understand the optimization techniques to make artificial intelligence more efficient 🚀
+This library aims to become a curated list of awesome material (cool papers, tutorials, courses, etc.) on optimization techniques to make artificial intelligence faster and more efficient 🚀 
 
-Best techniques for deep learning acceleration
+Among the best acceleration techniques for deep learning are:
 - [ ] [Deep learning compilers](#deep-learning-compilers)
 - [x] [Quantization](#quantization)
 - [ ] [Sparsity](#sparsity)
 - [ ] [Distillation](#distillation)
 - [ ] [Cached datasets](#chached-datasets)
 
-And many others. Do you have any idea on material to expand the list? We are welcoming contributions!
+And many others. Do you have any idea on material to expand the list? We are welcoming contributions! And don't forget to leave a star if you found this library insightful ⭐
 
 
-# Contribute
+# Contribute![rect846](https://user-images.githubusercontent.com/83510798/171454584-50ab5135-ad6f-4f6b-a189-f628a30a6997.png)
 
-TBD
+
+We have recently published this library. We will continue to update and upgrade it with great material on how to accelerate artificial intelligence models and make them ever more efficient.
+
+We welcome support from the open-source community in any form 🥰
+
+Open an [issue](https://github.com/nebuly-ai/learning-AI-optimization/issues) or drop a message in the <a href="https://discord.gg/jyjtZTPyHS">community</a> channel to
+- Add topics you would like to be covered
+- Ask any questions
+- Report a typo
+- Propose to include your research work
+
+
+Fork the library, make the changes, and send us a [pull request](https://github.com/nebuly-ai/learning-AI-optimization/pulls) in case you want to
+- Write new content on AI optimization
+- Correct or improve some sections
+
+
+Currently, the main contributor to the library is [Pier](https://www.linkedin.com/in/pierpaolo-sorbellini-64603012b/), and the library would not have been possible without Diego's interesting insights and topic suggestions and support from the <a href="https://discord.gg/jyjtZTPyHS">community</a>. 
 
 
 # The community for AI acceleration
@@ -40,6 +57,8 @@ Quantization is one of the methods that can be used to compress a neural network
 The application of quantization during training is quite complex and must be carefully managed to avoid divergence during training, so the most extreme quantization strategies are typically applied for inference. 
 During quantization in neural networks, unlike what is commonly done in signal compression, the key aspect that must be preserved is not the precise representation of the quantized value, but accuracy. The goal is to reduce the accuracy of the parameters and activation maps, with minimal impact on the generalization/accuracy power of the model.
 
+## Quantization techniques
+
 Quantization techniques can be clustered by
 -  [Type](#types)
 -  [Granularity](#granularity)
@@ -48,7 +67,7 @@ Quantization techniques can be clustered by
 
 ```mermaid
 flowchart LR
-A[Quantization \n Techniques \n Inference] --> B[Type]
+A[Quantization \n Inference \n Techniques] --> B[Type]
 B --> BA[Uniform]
 B --> BB[Non-Uniform]
 BA --> BAA[Symmetric]
@@ -201,9 +220,23 @@ In integer-only quantization, all operations are performed using low-precision i
 All scaling operations are performed with dyadic numbers, that is, rational numbers with integer values at the numerator and a power of 2 at the denominator. This means that scaling can be performed simply by applying bitshift operations, which are extremely more efficient than divisions. All addition must have the same dyadic scale, which makes the logic of addition simpler and more efficient.
 
 
-# [HAWQV3: Dyadic Neural Network Quantization](https://arxiv.org/abs/2011.10680)
+# Interesting material on quantization 
 
-This Berkeley paper proposes an approach to quantization with mixed dyadic symmetric and asymmetric quantization. It suggests an interesting strategy for selecting the quantization scheme of different layers using hardware-dependent metrics. Their library is available at [HAWQ GitHub](https://github.com/Zhen-Dong/HAWQ/blob/main/ILP.ipynb)
-* Do you think there are better schemes for performing quantization?
-* What are the limitations of what they propose? any space for improvement?
-* Do you think it is possible to implement this quantization approach in [nebullvm](https://github.com/nebuly-ai/nebullvm)?
+## HAWQV3: Dyadic Neural Network Quantization
+
+[This Berkeley paper](https://arxiv.org/abs/2011.10680) proposes an approach to quantization with mixed dyadic symmetric and asymmetric quantization. It suggests an interesting strategy for selecting the quantization scheme of different layers using hardware-dependent metrics. The library is available at [HAWQ GitHub](https://github.com/Zhen-Dong/HAWQ/blob/main/ILP.ipynb).
+
+The paper opens up many questions, and below are just a few of them.
+
+* What are the limitations of the approach proposed in the paper? Is there room for improvement?
+* Are there better schemes for performing quantization?
+* Is it possible to implement this quantization approach in [nebullvm](https://github.com/nebuly-ai/nebullvm)?
+
+Let us know your views on this topic, either by opening an issue or dropping a message on <a href="https://discord.gg/RbeQMu886J">the community channel</a>.
+
+<img height="30" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
+
+<p align="center">
+  <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
+  <a href="#contribute">Contribute to the library</a>
+</p>
