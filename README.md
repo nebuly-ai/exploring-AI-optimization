@@ -45,8 +45,7 @@ Currently, the main contributor to the library is [Pier](https://www.linkedin.co
 Do you want to meet the contributors of this libraries and other developers who share the vision of an superfast and sustainable artificial intelligence? <a href="https://discord.gg/jyjtZTPyHS">Join the community</a> for AI acceleration on Discord!
 
 
-
----
+<img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
 # Quantization
 The complexity of NN models has increased significantly, which means that they cannot be used for many applications with limited resources, or even if possible, large computational resources and power are required.
