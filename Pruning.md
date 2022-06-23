@@ -108,7 +108,7 @@ Where, $p_i$ is the probability of bin $i$, $H_j$ is the entropy of channel $j$.
 ### APoZ [[3]](#3)
 It is defined Average Percentage of Zeros (APoZ) to measure the percentage of zero activations of a neuron after the ReLU mapping. $APoZ_c^{(i)}$ of the $c-th$ neuron in $i-th$ layer is defined as:
 
-$$ APoZ_c^{(i)} =  \frac{\sum_k^N \sum_j^M f(O_{c,j}^{(i)}(k))}{N \times M}$$
+$$ APoZ_c^{(i)} =  \frac{\sum_{k}^{N} \sum_{j}^{M} f(O_{c,j}^{(i)}(k))}{N \times M}$$
 
 Where, $O_c^{(i)}$ denotes the output of the $c-th$ neuron in $i-th$ layer, $M$ denotes the dimension of output feature map of $O_c^{(i)}$ , and $N$ denotes the total number of validation examples. While $f(\cdot)$ is a function that is equal to one only if $O_c^{(i)} = 0$ and zero otherwise.  
 The higher mean APoZ also indicates more redundancy in a layer. Since a neural network has a multiplication-addition-activation computation process, a neuron which has its outputs mostly zeros will have very little contribution to the output of subsequent layers, as well as to the final results. Thus, we can remove those neurons without harming too much to the overall accuracy of the network.  
@@ -124,7 +124,7 @@ This value gives an expectation of the magnitude of the output feature map. Then
 ### Geometric Median [[5]](#5)
 The geometric median is used to get the common information of all the filters within the single ith layer:
 
-$$ x^{GM} = \text{argmin}_x \sum_{j'} || x - F_{i,j'} ||_2$$
+$$ x^{GM} = argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
 $$ x \in R ^ {N_i \times K \times K} $$
 $$ j'\in [1, N_{i+1}] $$
 
