@@ -409,6 +409,8 @@ Li, H., Kadav, A., Durdanovic, I., Samet, H., & Graf, H. P. ["Pruning filters fo
 <a id ="5">[5]</a>
 He, Y., Liu, P., Wang, Z., Hu, Z., & Yang, Y. . ["Filter pruning via geometric median for deep convolutional neural networks acceleration"](https://arxiv.org/abs/1811.00250). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (2019).
 
+<img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
+
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
   <a href="#contribute">Contribute to the library</a>
