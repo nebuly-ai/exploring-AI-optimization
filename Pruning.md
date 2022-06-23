@@ -124,7 +124,7 @@ This value gives an expectation of the magnitude of the output feature map. Then
 ### Geometric Median [[5]](#5)
 The geometric median is used to get the common information of all the filters within the single ith layer:
 
-$$ x^{GM} = \argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
+$$ x^{GM} = \text{argmin}_x \sum_{j'} || x - F_{i,j'} ||_2$$
 $$ x \in R ^ {N_i \times K \times K} $$
 $$ j'\in [1, N_{i+1}] $$
 
@@ -134,7 +134,7 @@ Then is found the filters that are closer to geometric mean of the filters and p
 
 Such computations is rather complex than instead is possible to find which filter minimizes the summation of the distance with other filters. 
 
-$$ F_{i,x^*} = \argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
+$$ F_{i,x^*} = argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
 $$ x \in [F_{i,1} \dots  F_{i,N_{i+1}}] $$
 $$ j'\in [1, N_{i+1}] $$
 
