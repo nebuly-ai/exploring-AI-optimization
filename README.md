@@ -11,8 +11,8 @@ This library aims to become a curated list of awesome material (cool papers, tut
 
 Among the best acceleration techniques for deep learning are:
 - [ ] Deep learning compilers
-- [x] [Quantization](#quantization)
-- [x] [Pruning](https://github.com/nebuly-ai/learning-AI-optimization#:~:text=22%20days%20ago-,Pruning.md,-Update%20Pruning.md)
+- [x] [Quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/Quantization.md)
+- [x] [Pruning](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/Pruning.md)
 - [ ] Sparsity
 - [ ] Distillation
 - [ ] Cached datasets
