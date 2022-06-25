@@ -169,7 +169,7 @@ $$ F_{i,x^*} = argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
 $$ x \in [F_{i,1} \dots  F_{i,N_{i+1}}] $$
 $$ j'\in [1, N_{i+1}] $$
 
-Since the selected filter(s), $F_{i,x^*}$ , and left ones share the most common information. This indicates the information of the filter(s) $F_{i,x^*}$ could be replaced by others.
+Since the selected filter(s), $F_{i, x^* }$ , and left ones share the most common information. This indicates the information of the filter(s) $F_{i, x^* }$ could be replaced by others.
 
 
 ## References
