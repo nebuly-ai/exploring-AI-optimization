@@ -12,10 +12,10 @@ The pruning algorithm usually can be divided in three main parts:
 * The methodology to perform the pruning. 
 * The fine-tuning of the remaining parameters. 
 
-## Pruning a way to Find the "Lottery Ticket"
-Given a network, the lottery ticket hypothesis suggests that there is a subnetwork that is at least as accurate as the original network. Pruning, which is a technique of removing weights from a network without affecting its accuracy, aims to find this lottery ticket. 
+## Pruning a Way to Find the "Lottery Ticket"
+Given a network, the lottery ticket hypothesis suggests that there is a subnetwork that is at least as accurate as the original network. Pruning, which is a technique for removing weights from a net without affecting its accuracy, aims to find this lottery ticket. 
 The main advantages of a pruned network are:
-* the model is smaller: it has fewer weights and therefore occupies a smaller portion of memory. 
+* The model is smaller: it has fewer weights and therefore has a smaller memory footprint. 
 * The model is faster: the smaller weights can reduce the number of FLOPS of the model. 
 * The training of the model is faster. 
 
@@ -29,26 +29,27 @@ These "winning tickets" or subnetworks are found to have special properties:
 Various pruning techniques have been proposed in the literature. Here is an attempt to categorize common traits.
 
 ### Scale: Structured Vs Unstructured 
-Unstructured pruning occurs when the weights to be pruned are individually targeted without taking into account the layer structure. This means that the selection of weights to prune is easy once the principle for doing so is defined.  Since the layer structure is not taken into account, this type of pruning may not improve the performance of the model. The typical case is that as the number of pruned weights increases, the matrix becomes more and more sparse; sparsity requires ad hoc computational techniques that may produce even worse results if the tradeoff between representation overhead and the amount of computation performed is not balanced. For this reason, the performance increase with this type of pruning is usually only observable for a high pruning ratio. 
+Unstructured pruning occurs when the weights to be pruned are individually targeted without taking into account the layer structure. This means that, once the pruning principle is defined, the selection of weights to be eliminated becomes fairly simple.
+Since the layer structure is not taken into account, this type of pruning may not improve the performance of the model. The typical case is that as the number of pruned weights increases, the matrix becomes more and more sparse; sparsity requires ad hoc computational techniques that may produce even worse results if the tradeoff between representation overhead and the amount of computation performed is not balanced. For this reason, the performance increase with this type of pruning is usually only observable for a high pruning ratio. 
 Structured Pruning, instead of focusing on individual weights, attempts to prune an entire structure by producing a more ordered sparsity that is computationally easier to handle, sacrificing the simplicity of the pruning algorithm. 
 
 ### Data Dependency: Data Dependent Vs Data Independent
-The distinction between pruning techniques that use only weight as information for the pruning algorithm (Data Independet) and techniques that perform further analysis that require some input data to be provided (Data Dependent). Usually data-dependent techniques, because they require performing more calculations, are more costly in terms of time and resources. 
+The distinction between pruning techniques that use only weight as information for the pruning algorithm (Data Independent) and techniques that perform further analyses that require some input data to be provided (Data Dependent). Usually data-dependent techniques, because they require performing more calculations, are more costly in terms of time and resources. 
 
 ### Granularity: One-shot Vs Iterative
-One-shot techniques establish a criterion, such as the amount of pruning weight or model compression, and perform pruning in a single pass. Iterative techniques, on the other hand, adapt their learning and pruning ratio through several training epochs, usually producing much better results in terms of both compression achieved and accuracy degradation. 
+One-shot techniques establish a criterion, such as the amount of pruning weight or model compression, and perform pruning in a single pass. Iterative techniques, on the other hand, adapt their learning and pruning ratio through several training epochs, usually producing much better results in terms of both compression achieved and limited accuracy degradation. 
 
 ### Initialization: Random, Later Iteration, Fine-Tuning
-Especially when performing iterative pruning, with different pruning ratios, there are several possibilities to set the initial weight between pruning steps, which can be set randomly each time, or maintained from the previous epoch by fine-tuning the remaining weights to balance those being pruned. Another technique is to take a later iteration as a starting point, using a trade-off between random and maintaining the same from the previous epoch; in this way the model has more freedom to adapt to the pruned weight and generally adapts better to change. 
+Especially when performing iterative pruning with different pruning ratios, there are several ways to set the initial weight between pruning stages. It can be set randomly each time, or kept from the previous era, precisely adjusting the remaining weights to balance those that have been pruned. Another technique is to take a later iteration as a starting point, using a trade-off between a random random and maintaining the same weight from the previous epoch; in this way, the model has more freedom to adapt to the pruned weight and generally adapts better to the change. 
 
 ### Reversibility: Masked Vs Unmasked
-One of the problems with pruning is that some of the weights that are removed in the first iterations may actually be critical, and their saliency may be more pronounced as pruning increases. For this reason, some techniques, instead of completely removing the weights, adopt a masking technique that is able to maintain and restore the value of the weights if in a later iteration they start to become relevant. 
+One of the problems with pruning is that some of the weights that are removed in the first iterations may actually be critical, and their saliency may be more pronounced than pruning increases. For this reason, some techniques, instead of completely removing the weights, adopt a masking technique that is able to maintain and restore the value of the weights if in a later iteration they start to become relevant. 
 
 ### Element Type: Neuron Vs Connection
-Simply the different types of pruned element, which could be a connection between two neurons or directly the entire neuron that is pruned. 
+They are simply the different types of pruned elements, whether it can be a connection between two neurons or a neuron.
 
 ### Timing: Dynamic Vs Static
-Dynamic pruning is performed at runtime introducing some overhead but can be adaptively performed per computation, Static pruning is performed offline before deploying the model
+Dynamic pruning is performed at runtime. It introduces some overhead but can be adaptively performed computation by computation.  Static pruning is performed before the deploying the model.
 
 ```mermaid
 flowchart LR
@@ -79,7 +80,7 @@ H --> HB["Dynamic"]
 ## Pruning Techniques
 
 ### Magnitude Based: Simple, Regularized.
-Under the hypothesis that smaller weights have a minor impact on the model accuracy the weights that are smaller than a given threshold are pruned. To enforce the weight to be pruned some regularization can be applied. Usually $L_1$ norm is better right after pruning while $L_2$ works better if the weights of the pruned network are fine-tuned. 
+Under the hypothesis that smaller weights have a minor impact on the model accuracy, the weights that are smaller than a given threshold are pruned. To enforce the weight to be pruned, some regularization can be applied. Usually $L_1$ norm is better right after pruning while $L_2$ works better if the weights of the pruned network are fine-tuned. 
 
 ### Inboud Pruning [[1]](#1)
 The input pruning method targets the number of channels on which each filter operates. The amount of information each channel brings is measured by the variance of the activation output of the specific channel.
