@@ -26,30 +26,7 @@ These "winning tickets" or subnetworks are found to have special properties:
 
 
 ## Pruning Types
-Various pruning techniques have been proposed in the literature. Here is an attempt to categorize common traits.
-
-### Scale: Structured Vs Unstructured 
-Unstructured pruning occurs when the weights to be pruned are individually targeted without taking into account the layer structure. This means that, once the pruning principle is defined, the selection of weights to be eliminated becomes fairly simple.
-Since the layer structure is not taken into account, this type of pruning may not improve the performance of the model. The typical case is that as the number of pruned weights increases, the matrix becomes more and more sparse; sparsity requires ad hoc computational techniques that may produce even worse results if the tradeoff between representation overhead and the amount of computation performed is not balanced. For this reason, the performance increase with this type of pruning is usually only observable for a high pruning ratio. 
-Structured Pruning, instead of focusing on individual weights, attempts to prune an entire structure by producing a more ordered sparsity that is computationally easier to handle, sacrificing the simplicity of the pruning algorithm. 
-
-### Data Dependency: Data Dependent Vs Data Independent
-The distinction between pruning techniques that use only weight as information for the pruning algorithm (Data Independent) and techniques that perform further analyses that require some input data to be provided (Data Dependent). Usually data-dependent techniques, because they require performing more calculations, are more costly in terms of time and resources. 
-
-### Granularity: One-shot Vs Iterative
-One-shot techniques establish a criterion, such as the amount of pruning weight or model compression, and perform pruning in a single pass. Iterative techniques, on the other hand, adapt their learning and pruning ratio through several training epochs, usually producing much better results in terms of both compression achieved and limited accuracy degradation. 
-
-### Initialization: Random, Later Iteration, Fine-Tuning
-Especially when performing iterative pruning with different pruning ratios, there are several ways to set the initial weight between pruning stages. It can be set randomly each time, or kept from the previous era, precisely adjusting the remaining weights to balance those that have been pruned. Another technique is to take a later iteration as a starting point, using a trade-off between a random random and maintaining the same weight from the previous epoch; in this way, the model has more freedom to adapt to the pruned weight and generally adapts better to the change. 
-
-### Reversibility: Masked Vs Unmasked
-One of the problems with pruning is that some of the weights that are removed in the first iterations may actually be critical, and their saliency may be more pronounced than pruning increases. For this reason, some techniques, instead of completely removing the weights, adopt a masking technique that is able to maintain and restore the value of the weights if in a later iteration they start to become relevant. 
-
-### Element Type: Neuron Vs Connection
-They are simply the different types of pruned elements, whether it can be a connection between two neurons or a neuron.
-
-### Timing: Dynamic Vs Static
-Dynamic pruning is performed at runtime. It introduces some overhead but can be adaptively performed computation by computation.  Static pruning is performed before the deploying the model.
+Various [pruning techniques](#pruning-techniques) have been proposed in the literature. Here is an attempt to categorize common traits, namely [scale](#scale-structured-vs-unstructured), [data dependency](#data-dependency-data-dependent-vs-data-independent), [granularity](#granularity-one-shot-vs-iterative), [initialization](#initialization-random-later-iteration-fine-tuning), [reversibility](#reversibility-masked-vs-unmasked), [element type](#element-type-neuron-vs-connection), and [timing](#timing-dynamic-vs-static).
 
 ```mermaid
 flowchart LR
@@ -77,7 +54,55 @@ H --> HA["Static"]
 H --> HB["Dynamic"]
 ```
 
+### Scale: Structured Vs Unstructured
+Unstructured pruning occurs when the weights to be pruned are individually targeted without taking into account the layer structure. This means that, once the pruning principle is defined, the selection of weights to be eliminated becomes fairly simple.
+Since the layer structure is not taken into account, this type of pruning may not improve the performance of the model. The typical case is that as the number of pruned weights increases, the matrix becomes more and more sparse; sparsity requires ad hoc computational techniques that may produce even worse results if the tradeoff between representation overhead and the amount of computation performed is not balanced. For this reason, the performance increase with this type of pruning is usually only observable for a high pruning ratio. 
+Structured Pruning, instead of focusing on individual weights, attempts to prune an entire structure by producing a more ordered sparsity that is computationally easier to handle, sacrificing the simplicity of the pruning algorithm. 
+
+### Data Dependency: Data Dependent Vs Data Independent
+The distinction between pruning techniques that use only weight as information for the pruning algorithm (Data Independent) and techniques that perform further analyses that require some input data to be provided (Data Dependent). Usually data-dependent techniques, because they require performing more calculations, are more costly in terms of time and resources. 
+
+### Granularity: One-Shot Vs Iterative
+One-shot techniques establish a criterion, such as the amount of pruning weight or model compression, and perform pruning in a single pass. Iterative techniques, on the other hand, adapt their learning and pruning ratio through several training epochs, usually producing much better results in terms of both compression achieved and limited accuracy degradation. 
+
+### Initialization: Random, Later Iteration, Fine-Tuning
+Especially when performing iterative pruning with different pruning ratios, there are several ways to set the initial weight between pruning stages. It can be set randomly each time, or kept from the previous era, precisely adjusting the remaining weights to balance those that have been pruned. Another technique is to take a later iteration as a starting point, using a trade-off between a random random and maintaining the same weight from the previous epoch; in this way, the model has more freedom to adapt to the pruned weight and generally adapts better to the change. 
+
+### Reversibility: Masked Vs Unmasked
+One of the problems with pruning is that some of the weights that are removed in the first iterations may actually be critical, and their saliency may be more pronounced than pruning increases. For this reason, some techniques, instead of completely removing the weights, adopt a masking technique that is able to maintain and restore the value of the weights if in a later iteration they start to become relevant. 
+
+### Element Type: Neuron Vs Connection
+They are simply the different types of pruned elements, whether it can be a connection between two neurons or a neuron.
+
+### Timing: Dynamic Vs Static
+Dynamic pruning is performed at runtime. It introduces some overhead but can be adaptively performed computation by computation.  Static pruning is performed before the deploying the model.
+
+<img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
+
 ## Pruning Techniques
+
+The techniques explored in the literature can be grouped into clusters: 
+- Magnitude-based
+- Filter and feature map selection
+- Type of optimization
+- Sensitivity
+
+```mermaid
+flowchart LR
+A["Pruning \n Techniques"] --> B["Magnitude \n Based"]
+A --> C["Filter/ \n Feature Map \n Selection"]
+C --> CA["Variance Selection"]
+C --> CB["Entropy Based"]
+C --> CC["Zeros Counting \n (APoZ)"]
+C --> CD["Filter Weight \n Summing"]
+C --> CE["Geometric Mean \n Distance"]
+A --> D["Optimization \n Based"]
+D --> DA["Greedy Search"]
+D --> DB["LASSO"]
+A --> E["Sensitivity \n Based"]
+E --> EA["First Order \n Taylor Expansion"]
+E --> EB["Hessian \n Approximation"]
+```
 
 ### Magnitude Based: Simple, Regularized.
 Under the hypothesis that smaller weights have a minor impact on the model accuracy, the weights that are smaller than a given threshold are pruned. To enforce the weight to be pruned, some regularization can be applied. Usually $L_1$ norm is better right after pruning while $L_2$ works better if the weights of the pruned network are fine-tuned. 
@@ -146,23 +171,6 @@ $$ j'\in [1, N_{i+1}] $$
 
 Since the selected filter(s), $F_{i,x^*}$ , and left ones share the most common information. This indicates the information of the filter(s) $F_{i,x^*}$ could be replaced by others.
 
-
-```mermaid
-flowchart LR
-A["Pruning \n Techniques"] --> B["Magnitude \n Based"]
-A --> C["Filter/ \n Feature Map \n Selection"]
-C --> CA["Variance Selection"]
-C --> CB["Entropy Based"]
-C --> CC["Zeros Counting \n (APoZ)"]
-C --> CD["Filter Weight \n Summing"]
-C --> CE["Geometric Mean \n Distance"]
-A --> D["Optimization \n Based"]
-D --> DA["Greedy Search"]
-D --> DB["LASSO"]
-A --> E["Sensitivity \n Based"]
-E --> EA["First Order \n Taylor Expansion"]
-E --> EB["Hessian \n Approximation"]
-```
 
 ## References
 
