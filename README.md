@@ -15,7 +15,6 @@ Among the best acceleration techniques for deep learning are:
 - [x] [Pruning](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/Pruning.md)
 - [ ] Sparsity
 - [ ] Distillation
-- [ ] Cached datasets
 
 And many others. Do you have any idea on material to expand the list? We are welcoming contributions! And don't forget to leave a star if you found this library insightful ⭐
 
