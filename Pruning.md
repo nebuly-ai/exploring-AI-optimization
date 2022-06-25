@@ -84,8 +84,8 @@ Dynamic pruning is performed at runtime. It introduces some overhead but can be 
 The techniques explored in the literature can be grouped into clusters: 
 - Magnitude-based
 - Filter and feature map selection
-- Type of optimization
-- Sensitivity
+- Optimization-based
+- Sensitivity-based
 
 ```mermaid
 flowchart LR
