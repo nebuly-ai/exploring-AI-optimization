@@ -102,6 +102,7 @@ D --> DB["LASSO"]
 A --> E["Sensitivity \n Based"]
 E --> EA["First Order \n Taylor Expansion"]
 E --> EB["Hessian \n Approximation"]
+click CB "https://arxiv.org/abs/1706.05791"
 ```
 
 ### Magnitude Based: Simple, Regularized.
