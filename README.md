@@ -6,12 +6,12 @@
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
 
-# Learning AI optimization
+# Exploring AI optimization
 This library aims to become a curated list of awesome material (cool papers, tutorials, courses, etc.) on optimization techniques to make artificial intelligence faster and more efficient 🚀 
 
 Among the best acceleration techniques for deep learning are:
-- [x] Quantization [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization_overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization_resources.md)]
-- [x] Pruning [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning_overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning_resources.md)]
+- [x] Quantization [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-resources.md)]
+- [x] Pruning [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning-overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning-resources.md)]
 - [ ] Distillation
 - [ ] Deep learning compilers
 
