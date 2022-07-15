@@ -10,11 +10,10 @@
 This library aims to become a curated list of awesome material (cool papers, tutorials, courses, etc.) on optimization techniques to make artificial intelligence faster and more efficient 🚀 
 
 Among the best acceleration techniques for deep learning are:
-- [ ] Deep learning compilers
-- [x] [Quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/Quantization.md)
-- [x] [Pruning](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/Pruning.md)
-- [ ] Sparsity
+- [x] Quantization [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization_overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization_resources.md)]
+- [x] Pruning [[Overview](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning_overview.md), [Resources](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/pruning_resources.md)]
 - [ ] Distillation
+- [ ] Deep learning compilers
 
 And many others. Do you have any idea on material to expand the list? We are welcoming contributions! And don't forget to leave a star if you found this library insightful ⭐
 
