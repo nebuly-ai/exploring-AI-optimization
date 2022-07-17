@@ -25,7 +25,7 @@ To overcome this challenge, various types of optimizations are introduced, quant
 
 ## More resources
 
-Check out this page to find other resources on quantization, including literature reviews, papers, courses and blogs, and open-source libraries.
+See the [resource page on quantization](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-resources) and check out the best literature reviews, papers, courses and blogs, and open-source libraries on this topic.
 
 ## Quantization techniques
 
