@@ -20,8 +20,8 @@ And check out [this page](https://github.com/emilecourthoud/learning-AI-optimiza
 
 ## Literature reviews and papers
 Legenda: 
-- ✏️  >100 citations, ✏️✏️ >500 citations
-- ⭐  >100 stars, ⭐⭐  >250 stars
+- ✏️  100-499 citations, ✏️✏️ $\geq$ 500 citations
+- ⭐  100-249 stars, ⭐⭐ $\geq$ 250 stars
 
 Sorting: alphabetic order
 <br>
@@ -39,9 +39,13 @@ Sorting: alphabetic order
 ### List of papers
 2022
 - FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
+- ...
+- ...
 
 2021
 - MQBench: Towards Reproducible and Deployable Model Quantization Benchmark [[paper](https://arxiv.org/abs/2111.03759)][[github](http://mqbench.tech/)]
+- ...
+- ...
 
 2020
 - APQ: Joint Search for Network Architecture, Pruning and Quantization Policy [[✏️CVPR](https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_APQ_Joint_Search_for_Network_Architecture_Pruning_and_Quantization_Policy_CVPR_2020_paper.html)][⭐[github](https://github.com/mit-han-lab/apq)]
