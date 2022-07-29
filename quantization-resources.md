@@ -41,7 +41,6 @@ Sorting: alphabetic order
 - 8-bit Optimizers via Block-wise Quantization [[ICLR](https://arxiv.org/abs/2110.02861)]
 - F8Net: Fixed-Point 8-bit Only Multiplication for Network Quantization [[ICLR](https://arxiv.org/abs/2202.05239)]
 - FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
-- FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
 - Q-ViT: Fully Differentiable Quantization for Vision Transformer [[paper](https://arxiv.org/abs/2201.07703)]
 - QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization [[paper](https://arxiv.org/abs/2203.05740)]
 - SQuant: On-the-Fly Data-Free Quantization via Diagonal Hessian Approximation [[ICLR](https://arxiv.org/abs/2202.07471)]
@@ -60,7 +59,6 @@ Sorting: alphabetic order
 - High-Capacity Expert Binary Networks [[ICLR](https://arxiv.org/abs/2010.03558)]
 - Incremental few-shot learning via vector quantization in deep embedded space [[ICLR](https://openreview.net/forum?id=3SV-ZePhnZM)]
 - Learnable Companding Quantization for Accurate Low-bit Neural Networks [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Yamamoto_Learnable_Companding_Quantization_for_Accurate_Low-Bit_Neural_Networks_CVPR_2021_paper.html)]
-- MQBench: Towards Reproducible and Deployable Model Quantization Benchmark [[paper](https://arxiv.org/abs/2111.03759)][[github](http://mqbench.tech/)]
 - MQBench: Towards Reproducible and Deployable Model Quantization Benchmark [[paper](https://arxiv.org/abs/2111.03759)][[github](http://mqbench.tech/)]
 - Multi-Prize Lottery Ticket Hypothesis: Finding Accurate Binary Neural Networks by Pruning A Randomly Weighted Network [[paper](https://arxiv.org/abs/2103.09377)]
 - Network Quantization with Element-wise Gradient Scaling [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Lee_Network_Quantization_With_Element-Wise_Gradient_Scaling_CVPR_2021_paper.html)]
@@ -165,7 +163,6 @@ Before 2017
 - Overcoming Challenges in Fixed Point Training of Deep Convolutional Networks [[ICML](https://arxiv.org/abs/1607.02241)]
 - Quantized Convolutional Neural Networks for Mobile Devices [[✏️✏️CVPR](https://openaccess.thecvf.com/content_cvpr_2016/html/Wu_Quantized_Convolutional_Neural_CVPR_2016_paper.html)]
 - BinaryConnect: Training Deep Neural Networks with binary weights during propagations [[✏️✏️NIPS](https://arxiv.org/abs/1511.00363)][⭐⭐[github](https://github.com/MatthieuCourbariaux/BinaryConnect)]
-- Expectation Backpropagation: Parameter-Free Training of Multilayer Neural Networks with Continuous or Discrete Weights [[✏️NIPS](https://proceedings.neurips.cc/paper/2014/hash/076a0c97d09cf1a0ec3e19c7f2529f2b-Abstract.html)]
 - Expectation Backpropagation: Parameter-Free Training of Multilayer Neural Networks with Continuous or Discrete Weights [[✏️NIPS](https://proceedings.neurips.cc/paper/2014/hash/076a0c97d09cf1a0ec3e19c7f2529f2b-Abstract.html)]
 - Back to Simplicity: How to Train Accurate BNNs from Scratch? [[paper](https://arxiv.org/abs/1906.08637)][⭐[github](https://github.com/hpi-xnor/BMXNet-v2)]
 
