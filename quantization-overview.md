@@ -13,7 +13,7 @@
 
 Over the years, the evolution of neural networks has progressed towards larger models. Although the accuracy of these models has increased significantly, these large models often cannot be implemented for many applications with limited resources that require real-time inference, low power consumption, or are limited in computing capacity or budget.
 
-To overcome this challenge, various types of optimizations are introduced, quantization being one of them. The intuition behind qunatization is to create a more compact representation of the neural network by reducing the precision of weights, biases and/or activations below the standard floating-point precision. This technique reduces the memory required to store tensors, data movement between memories and processors and enables faster computations without sacrificing too much accuracy.
+To overcome this challenge, various types of optimizations are introduced, quantization being one of them. The intuition behind quantization is to create a more compact representation of the neural network by reducing the precision of weights, biases and/or activations below the standard floating-point precision. This technique reduces the memory required to store tensors, data movement between memories and processors and enables faster computations without sacrificing too much accuracy.
 
 ## Key takeways
 
@@ -25,7 +25,7 @@ To overcome this challenge, various types of optimizations are introduced, quant
 
 ## More resources
 
-See the [resource page on quantization](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-resources) and check out the best literature reviews, papers, courses and blogs, and open-source libraries on this topic.
+See the [resource page on quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources) and check out the best literature reviews, papers, courses and blogs, and open-source libraries on this topic.
 
 ## Quantization techniques
 
