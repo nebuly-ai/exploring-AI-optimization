@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
 
 
@@ -197,5 +197,5 @@ He, Y., Liu, P., Wang, Z., Hu, Z., & Yang, Y. . ["Filter pruning via geometric m
 
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
