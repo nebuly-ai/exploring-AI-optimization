@@ -1,8 +1,9 @@
 
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
+
 
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
@@ -33,19 +34,46 @@ Sorting: alphabetic order
 - Analysis of Quantized Models [[ICLR](https://openreview.net/forum?id=ryM_IoAqYX)]
 - Binary Neural Networks: A Survey [[✏️paper](https://www.sciencedirect.com/science/article/abs/pii/S0031320320300856)]
 - Compression of Deep Learning Models for Text: A Survey [[✏️paper](https://arxiv.org/pdf/2008.05221.pdf)]
-- On the Universal Approximability and Complexity Bounds of Quantized ReLU Neural Networks [[ICLR](https://arxiv.org/abs/1802.03646)]
 
 
 ### List of papers
 2022
+- 8-bit Optimizers via Block-wise Quantization [[ICLR](https://arxiv.org/abs/2110.02861)]
+- F8Net: Fixed-Point 8-bit Only Multiplication for Network Quantization [[ICLR](https://arxiv.org/abs/2202.05239)]
 - FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
-- ...
-- ...
+- FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
+- Q-ViT: Fully Differentiable Quantization for Vision Transformer [[paper](https://arxiv.org/abs/2201.07703)]
+- QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization [[paper](https://arxiv.org/abs/2203.05740)]
+- SQuant: On-the-Fly Data-Free Quantization via Diagonal Hessian Approximation [[ICLR](https://arxiv.org/abs/2202.07471)]
+- Toward Efficient Low-Precision Training: Data Format Optimization and Hysteresis Quantization [[ICLR](https://openreview.net/forum?id=3HJOA-1hb0e)]
 
 2021
+- A Winning Hand: Compressing Deep Networks Can Improve Out-of-Distribution Robustness [[NeurIPS](https://proceedings.neurips.cc/paper/2021/hash/0607f4c705595b911a4f3e7a127b44e0-Abstract.html)]
+- Any-Precision Deep Neural Networks [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/17286)]
+- Binary Graph Neural Networks [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Bahri_Binary_Graph_Neural_Networks_CVPR_2021_paper.html)]
+- BiPointNet: Binary Neural Network for Point Clouds [[paper](https://arxiv.org/abs/2010.05501)]
+- BRECQ: Pushing the Limit of Post-Training Quantization by Block Reconstruction [[✏️paper](https://arxiv.org/abs/2102.05426)]
+- BSQ: Exploring Bit-Level Sparsity for Mixed-Precision Neural Network Quantization [[ICLR](https://arxiv.org/abs/2102.10462)]
+- Degree-Quant: Quantization-Aware Training for Graph Neural Networks [[ICLR](https://arxiv.org/abs/2008.05000)]
+- Diversifying Sample Generation for Accurate Data-Free Quantization [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Zhang_Diversifying_Sample_Generation_for_Accurate_Data-Free_Quantization_CVPR_2021_paper.html)]
+- FracBits: Mixed Precision Quantization via Fractional Bit-Widths [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/17269)]
+- High-Capacity Expert Binary Networks [[ICLR](https://arxiv.org/abs/2010.03558)]
+- Incremental few-shot learning via vector quantization in deep embedded space [[ICLR](https://openreview.net/forum?id=3SV-ZePhnZM)]
+- Learnable Companding Quantization for Accurate Low-bit Neural Networks [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Yamamoto_Learnable_Companding_Quantization_for_Accurate_Low-Bit_Neural_Networks_CVPR_2021_paper.html)]
 - MQBench: Towards Reproducible and Deployable Model Quantization Benchmark [[paper](https://arxiv.org/abs/2111.03759)][[github](http://mqbench.tech/)]
-- ...
-- ...
+- MQBench: Towards Reproducible and Deployable Model Quantization Benchmark [[paper](https://arxiv.org/abs/2111.03759)][[github](http://mqbench.tech/)]
+- Multi-Prize Lottery Ticket Hypothesis: Finding Accurate Binary Neural Networks by Pruning A Randomly Weighted Network [[paper](https://arxiv.org/abs/2103.09377)]
+- Network Quantization with Element-wise Gradient Scaling [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Lee_Network_Quantization_With_Element-Wise_Gradient_Scaling_CVPR_2021_paper.html)]
+- OPQ: Compressing Deep Neural Networks with One-shot Pruning-Quantization [[AAAI](https://ojs.aaai.org/index.php/AAAI/article/view/16950)]
+- Post-Training Quantization for Vision Transformer [[NeurIPS](https://proceedings.neurips.cc/paper/2021/hash/ec8956637a99787bd197eacd77acce5e-Abstract.html)]
+- Post-­training Quantization with Multiple Points: Mixed Precision without Mixed Precision [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/17054)]
+- Post-Training Sparsity-Aware Quantization [[NeurIPS](https://proceedings.neurips.cc/paper/2021/hash/9431c87f273e507e6040fcb07dcb4509-Abstract.html)]
+- ReCU: Reviving the Dead Weights in Binary Neural Networks [[ICCV](https://openaccess.thecvf.com/content/ICCV2021/html/Xu_ReCU_Reviving_the_Dead_Weights_in_Binary_Neural_Networks_ICCV_2021_paper.html)]
+- Stochastic Precision Ensemble: Self‐Knowledge Distillation for Quantized Deep Neural Networks [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/16839)]
+- Training with Quantization Noise for Extreme Model Compression [[✏️paper](https://arxiv.org/abs/2004.07320)][[github](https://github.com/facebookresearch/fairseq/tree/main/examples/quant_noise)]
+- TRQ: Ternary Neural Networks with Residual Quantization [[paper](https://ojs.aaai.org/index.php/AAAI/article/view/17036)]
+- Zero-shot Adversarial Quantization [[CVPR](https://openaccess.thecvf.com/content/CVPR2021/html/Liu_Zero-Shot_Adversarial_Quantization_CVPR_2021_paper.html)]
+
 
 2020
 - APQ: Joint Search for Network Architecture, Pruning and Quantization Policy [[✏️CVPR](https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_APQ_Joint_Search_for_Network_Architecture_Pruning_and_Quantization_Policy_CVPR_2020_paper.html)][⭐[github](https://github.com/mit-han-lab/apq)]
@@ -165,5 +193,5 @@ Blogs / written content
 
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
