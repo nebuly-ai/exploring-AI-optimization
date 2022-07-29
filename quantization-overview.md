@@ -35,10 +35,11 @@ See the [resource page on quantization](https://github.com/nebuly-ai/learning-AI
 ## Quantization techniques
 
 Quantization techniques can be clustered by
--  [Type](#types)
--  [Granularity](#granularity)
--  [Tuning method](#fine-tuning-methods)
--  [Computational strategy](#computation-strategy)
+
+- [1. Type](#types)
+- [2. Granularity](#granularity)
+- [3.Tuning method](#fine-tuning-methods)
+- [4. Computational strategy](#computation-strategy)
 
 ```mermaid
 flowchart LR
@@ -72,9 +73,9 @@ E --> EB[Integer \n Only]
 E --> EC[Dyadic]
 ```
 
-## Types
+## 1. Types
 
-### Uniform
+### 1.1 Uniform
 General quantization can be expressed as:
 
 $$Q(r)=Int(r/S) - Z$$ 
@@ -123,22 +124,22 @@ The weights, once calculated as quantized values, their value does not change an
 * Run a series of input samples to determine resonable ranges.
 * Calibrate the quantization during training.
 
-### Non-Uniform
+### 1.2 Non-Uniform
 Instead of using a linear scale more complex strategies can be used:
 
 * Logaritmic scale
 * code-based: the quantization is expressed as a real linear combination of binary vectors. 
 * computing ad-hoc scales by minimizing an optimization problem that is jointly trained with the model.
   
-### Stochastic
+### 1.3 Stochastic
 Noting that small updates to the weights may not result in any change, since the rounding operation may always return the same weights. Different approaches can be used to avoid this situation, such as imposing that the rounding operation has a certain probability of generating an upper or lower value in the quantized scale with a certain probability. The disadvantage is that generating random numbers and evaluating this probability distribution involves some overhead. 
 
-### Extreme
+### 1.4 Extreme
 Extreme quantization occurs when the amplitude of the quantization bits is set as binary $[-1,1]$ or ternary $[-1,0,1]$ in combination with binary or ternary activation maps; usually ReLu and other activations can also be transformed into a $sign$ function. The increase in overall performance can be considerable if the hardware is well optimized for these operations; in practice any multiplication can be transformed into a simple logical XOR. Usually this type of approach also requires the use of mixed precision to avoid the loss of too much accuracy. Ternary quantization allows the zero representation to be retained, which can be used to avoid unnecessary calculations or to perform pruning and further optimization.
 
-## Granularity
+## 2.0 Granularity
 
-### Calibration Granularity
+### 2.1 Calibration Granularity
 The granualarity used to compute the ranges $[\alpha,\beta]$ can be different:  
 * **Layer** 
 * **Group:** a subset of channel. 
@@ -147,14 +148,15 @@ The granualarity used to compute the ranges $[\alpha,\beta]$ can be different:
 
 Usually the standard is to use the channel. 
 
-### Mixed Precision
+### 2.2 Mixed Precision
 Each layer is quantized with a different bit precision and is usually done when using binary or ternary representations for quantization. The selection of this mixed precision for each layer is essentially a search problem. Typical approaches to selecting the number of bits for layer quantization are:
 
 * Reinforment Learning.
 * Second order sensitivity (Hessian) can measure the sensitivity of a layer to quantization.
 * Linear Programming approaches.
 
-## Fine-Tuning Methods
+
+## 3.1 Fine-Tuning Methods
 
 ### PTQ - Post Training Quantization
 PTQ consists of floating-point training and quantizing only at the end. The drop in accuracy is usually nontrivial, and some methods are used to reduce the impact of quantization:
@@ -169,7 +171,7 @@ The main idea is to train again with quantized parameters to improve accuracy. T
 The quantization operator is not differentiable and is typically flat piecewise, so it has zero gradient. The so-called Straight Through Estimator (STE) is used to solve this problem.
 The main idea is to treat the quantization gradient as an identity function. Other STE and non-STE approaches have also been proposed. 
 
-## Tuning Strategy
+## 3.2 Tuning Strategy
 
 ### Hardware-Aware Quantization
 The benefits of quantization are hardware-dependent, so the recent trend is to identify the type of quantization that can be performed based on the hardware specifications on which the model is deployed. A typical approach is to use an agent that learns which quantization steps can be performed.
@@ -183,15 +185,15 @@ Directly minimize the loss versus weights to improve the accuracy of determining
 ### Quantized Gradient
 To improve training time one apporach proposed is to quantize the gradients as well. 
 
-## Computation Strategy
+## 4.0 Computation Strategy
 
-### Simulated 
+### 4.1 Simulated 
 In simulated quantization, quantized model parameters are stored in low precision, but operations (matrix multiplications and convolutions) are performed with floating-point arithmetic. Therefore, the quantized parameters must be dequantized before the floating-point operations.
 
-### Integer-Only
+### 4.2 Integer-Only
 In integer-only quantization, all operations are performed using low-precision integer arithmetic. Low-precision logic has many advantages over its full-precision counterpart in terms of latency, power consumption and area efficiency.
 
-### Dyadic
+### 4.3 Dyadic
 All scaling operations are performed with dyadic numbers, that is, rational numbers with integer values at the numerator and a power of 2 at the denominator. This means that scaling can be performed simply by applying bitshift operations, which are extremely more efficient than divisions. All addition must have the same dyadic scale, which makes the logic of addition simpler and more efficient.
 
 
