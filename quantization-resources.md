@@ -10,13 +10,13 @@
 
 # Resources
 
-Awesome resource collection on pruning techniques.
+Awesome resource collection on quantization techniques.
 
 - <a href="#literature-reviews">Literature reviews</a> and <a href="#papers">papers</a>
 - <a href="#courses-webinars-and-blogs">Courses, webinars and blogs</a>
 
-And check [overview page on quantization](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-resources) f an overview of what quantization, as well as a mapping of quantization techniques, 
-And check out [this page](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-overview) for an overview of quantization process and a concept map of quantization techniques.
+And check [overview page on quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources) f an overview of what quantization, as well as a mapping of quantization techniques, 
+And check out [this page](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-overview) for an overview of quantization process and a concept map of quantization techniques.
 
 
 ## Literature reviews and papers
