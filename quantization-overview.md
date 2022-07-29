@@ -1,13 +1,20 @@
-
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
+
 
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
 
 # Overview
+
+Here we will explore
+- <a href="#what-is-neural-network-quantization">Fundamentals</a>
+- <a href="#quantization-techniques">Overview of quantization techniques</a>
+- <a href="https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources.md">Papers, blogs and other resources</a>
+
+## Quantization techniques
 
 ## What is neural network quantization?
 
@@ -15,7 +22,7 @@ Over the years, the evolution of neural networks has progressed towards larger m
 
 To overcome this challenge, various types of optimizations are introduced, quantization being one of them. The intuition behind quantization is to create a more compact representation of the neural network by reducing the precision of weights, biases and/or activations below the standard floating-point precision. This technique reduces the memory required to store tensors, data movement between memories and processors and enables faster computations without sacrificing too much accuracy.
 
-## Key takeways
+### Key takeways
 
 - Quantization is the process of reducing the precision of neural network weights, biases and/or activations to cut the cost of storing, transporting and computing data during neural network inference and training.
 - Quantization yields lower latency / higher throughput, reduced model size, memory footprint and power consumption, at the cost of small deterioration in model accuracy.
@@ -210,7 +217,5 @@ Let us know your views on this topic, either by opening an issue or dropping a m
 
 <p align="center">
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
-  <a href="#contribute">Contribute to the library</a>
+  <a href="https://github.com/nebuly-ai/learning-AI-optimization#contribute">Contribute to the library</a>
 </p>
-
-
