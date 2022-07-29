@@ -12,8 +12,8 @@
 
 Awesome resource collection on pruning techniques.
 
-- Literature reviews and papers
-- Courses, webinars, and blogs
+- <a href="#literature-reviews">Literature reviews</a> and <a href="#papers">papers</a>
+- <a href="#courses-webinars-and-blogs">Courses, webinars and blogs</a>
 
 And check [overview page on quantization](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-resources) f an overview of what quantization, as well as a mapping of quantization techniques, 
 And check out [this page](https://github.com/emilecourthoud/learning-AI-optimization/blob/main/quantization-overview) for an overview of quantization process and a concept map of quantization techniques.
@@ -27,7 +27,7 @@ Legenda:
 Sorting: alphabetic order
 <br>
 
-### List of literature reviews
+### Literature reviews
 
 - A Mean Field Theory of Quantized Deep Networks: The Quantization-Depth Trade-Off [[NeurIPS](https://proceedings.neurips.cc/paper/2019/hash/38ef4b66cb25e92abe4d594acb841471-Abstract.html)]
 - A Survey of Quantization Methods for Efficient Neural Network Inference [[✏️paper](https://arxiv.org/abs/2103.13630)]
@@ -36,7 +36,7 @@ Sorting: alphabetic order
 - Compression of Deep Learning Models for Text: A Survey [[✏️paper](https://arxiv.org/pdf/2008.05221.pdf)]
 
 
-### List of papers
+### Papers
 2022
 - 8-bit Optimizers via Block-wise Quantization [[ICLR](https://arxiv.org/abs/2110.02861)]
 - F8Net: Fixed-Point 8-bit Only Multiplication for Network Quantization [[ICLR](https://arxiv.org/abs/2202.05239)]
@@ -155,7 +155,7 @@ Sorting: alphabetic order
 - Incremental Network Quantization: Towards Lossless CNNs with Low-Precision Weights [[✏️✏️ICLR](https://arxiv.org/abs/1702.03044)][⭐[github](https://github.com/AojunZhou/Incremental-Network-Quantization)]
 - Local Binary Convolutional Neural Networks [[✏️CVPR](https://openaccess.thecvf.com/content_cvpr_2017/html/Juefei-Xu_Local_Binary_Convolutional_CVPR_2017_paper.html)][[github](https://github.com/juefeix/lbcnn.torch)]
 - Network Sketching: Exploiting Binary Structure in Deep CNNs [[✏️CVPR](https://openaccess.thecvf.com/content_cvpr_2017/html/Guo_Network_Sketching_Exploiting_CVPR_2017_paper.html)]
-- QSGD: Communication-Efficient SGD via Gradient Quantization and Encoding [[✏️✏️NIPS](QSGD: Communication-efficient SGD via gradient quantization and encoding)]
+- QSGD: Communication-Efficient SGD via Gradient Quantization and Encoding [[✏️✏️NIPS](https://proceedings.neurips.cc/paper/2017/file/6c340f25839e6acdc73414517203f5f0-Paper.pdf)]
 - Quantized Neural Networks Quantized Neural Networks: Training Neural Networks with Low Precision Weights and Activations [[✏️✏️paper](https://www.jmlr.org/papers/volume18/16-456/16-456.pdf)]
 
 Before 2017
@@ -172,15 +172,15 @@ Before 2017
 
 
 
-## Courses, webinars, blogs
+## Courses, webinars and blogs
 
-Webinars / video content
+Webinars, video content
 - [Codebasics, Quantization in deep learning (Tensorflow, Keras & Python)](https://www.youtube.com/watch?v=v1oHf1KV6kM)
 - [Hailo, Quantization of Neural Networks – High Accuracy at Low Precision](https://www.youtube.com/watch?v=DhHyshhc1lY)
 - [Sony, Downsizing Neural Networks by Quantization](https://www.youtube.com/watch?v=DDelqfkYCuo)
 - [tinyML, A Practical Guide to Neural Network Quantization](https://www.youtube.com/watch?v=KASuxB3XoYQ)
 
-Blogs / written content
+Blogs, written content
 - [How to accelerate and compress neural networks with quantization](https://towardsdatascience.com/how-to-accelerate-and-compress-neural-networks-with-quantization-edfbbabb6af7)
 - [Matlab, Quantization of Deep Neural Networks](https://www.mathworks.com/help/deeplearning/ug/quantization-of-deep-neural-networks.html)
 - [Quantization for Neural Networks](https://leimao.github.io/article/Neural-Networks-Quantization/)
