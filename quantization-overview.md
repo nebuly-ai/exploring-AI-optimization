@@ -14,8 +14,6 @@ Here we will explore
 - <a href="#quantization-techniques">Overview of quantization techniques</a>
 - <a href="https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources.md">Papers, blogs and other resources</a>
 
-## Quantization techniques
-
 ## What is neural network quantization?
 
 Over the years, the evolution of neural networks has progressed towards larger models. Although the accuracy of these models has increased significantly, these large models often cannot be implemented for many applications with limited resources that require real-time inference, low power consumption, or are limited in computing capacity or budget.
