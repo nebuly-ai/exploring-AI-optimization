@@ -38,7 +38,7 @@ Quantization techniques can be clustered by
 
 - [1. Type](#types)
 - [2. Granularity](#granularity)
-- [3.Tuning method](#fine-tuning-methods)
+- [3. Tuning method](#fine-tuning-methods)
 - [4. Computational strategy](#computation-strategy)
 
 ```mermaid
