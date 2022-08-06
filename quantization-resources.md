@@ -29,6 +29,7 @@ Sorting: alphabetic order
 
 ### Literature reviews
 
+- A Comprehensive Survey on Model Quantization for Deep Neural Networks [[paper](https://arxiv.org/abs/2205.07877)]
 - A Mean Field Theory of Quantized Deep Networks: The Quantization-Depth Trade-Off [[NeurIPS](https://proceedings.neurips.cc/paper/2019/hash/38ef4b66cb25e92abe4d594acb841471-Abstract.html)]
 - A Survey of Quantization Methods for Efficient Neural Network Inference [[✏️paper](https://arxiv.org/abs/2103.13630)]
 - Analysis of Quantized Models [[ICLR](https://openreview.net/forum?id=ryM_IoAqYX)]
