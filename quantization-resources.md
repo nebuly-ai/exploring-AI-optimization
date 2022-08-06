@@ -42,10 +42,14 @@ Sorting: alphabetic order
 - 8-bit Optimizers via Block-wise Quantization [[ICLR](https://arxiv.org/abs/2110.02861)]
 - F8Net: Fixed-Point 8-bit Only Multiplication for Network Quantization [[ICLR](https://arxiv.org/abs/2202.05239)]
 - FQ-ViT: Post-Training Quantization for Fully Quantized Vision Transformer [[IJCAI](https://arxiv.org/abs/2111.13824)][[github](https://github.com/megvii-research/FQ-ViT)]
+- Learnable Lookup Table for Neural Network Quantization [[CVPR](https://openaccess.thecvf.com/content/CVPR2022/html/Wang_Learnable_Lookup_Table_for_Neural_Network_Quantization_CVPR_2022_paper.html)]
+- MultiQuant: Training Once for Multi-bit Quantization of Neural Networks [[paper](https://www.ijcai.org/proceedings/2022/0504.pdf)]
 - Q-ViT: Fully Differentiable Quantization for Vision Transformer [[paper](https://arxiv.org/abs/2201.07703)]
 - QDrop: Randomly Dropping Quantization for Extremely Low-bit Post-Training Quantization [[paper](https://arxiv.org/abs/2203.05740)]
+- RAPQ: Rescuing Accuracy for Power-of-Two Low-bit Post-training Quantization [[IJCAI](https://arxiv.org/abs/2204.12322)]
 - SQuant: On-the-Fly Data-Free Quantization via Diagonal Hessian Approximation [[ICLR](https://arxiv.org/abs/2202.07471)]
 - Toward Efficient Low-Precision Training: Data Format Optimization and Hysteresis Quantization [[ICLR](https://openreview.net/forum?id=3HJOA-1hb0e)]
+
 
 2021
 - A Winning Hand: Compressing Deep Networks Can Improve Out-of-Distribution Robustness [[NeurIPS](https://proceedings.neurips.cc/paper/2021/hash/0607f4c705595b911a4f3e7a127b44e0-Abstract.html)]
