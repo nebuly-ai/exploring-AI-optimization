@@ -108,7 +108,8 @@ click CB "https://arxiv.org/abs/1706.05791"
 ### Magnitude Based: Simple, Regularized.
 Under the hypothesis that smaller weights have a minor impact on the model accuracy, the weights that are smaller than a given threshold are pruned. To enforce the weight to be pruned, some regularization can be applied. Usually $L_1$ norm is better right after pruning while $L_2$ works better if the weights of the pruned network are fine-tuned. 
 
-### Inboud Pruning [[1]](#1)
+### Variance Selection
+#### Inboud Pruning [[1]](#1)
 The input pruning method targets the number of channels on which each filter operates. The amount of information each channel brings is measured by the variance of the activation output of the specific channel.
 
 $$ \sigma_{ts} = var(|| W_{ts} * X_{s} ||_F) $$
@@ -116,7 +117,7 @@ $$ \sigma_{ts} = var(|| W_{ts} * X_{s} ||_F) $$
 Where $t$ is the filter, $s$ the activation channel.  
 Pruning of the entire network is performed sequentially on the layers of the network: from lower to higher layers, pruning is followed by fine-tuning, which is followed by pruning of the next layer. Speeding up the input pruning scheme is directly achieved by reducing the amount of computation that each filter performs.
 
-### Reduce and Reuse [[1]](#1)
+#### Reduce and Reuse [[1]](#1)
 To find candidates for pruning, the variance of each filter output on a sample of the training set is calculated. Then, all filters whose score is less than the percentile $\mu$ are eliminated.
 
 $$ \sigma_{t} = var(|| W_{t} * X ||_F) $$
