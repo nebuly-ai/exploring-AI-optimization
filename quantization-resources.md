@@ -15,17 +15,17 @@ Awesome resource collection on quantization techniques.
 - <a href="#literature-reviews">Literature reviews</a> and <a href="#papers">papers</a>
 - <a href="#courses-webinars-and-blogs">Courses, webinars and blogs</a>
 
-And check [overview page on quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources) f an overview of what quantization, as well as a mapping of quantization techniques, 
-And check out [this page](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-overview) for an overview of quantization process and a concept map of quantization techniques.
+If you still didn't, check [Overview page on quantization](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources) or [Exploring AI optimization](https://github.com/nebuly-ai/exploring-AI-optimization) to start getting into it. 
+
 
 
 ## Literature reviews and papers
-Legenda: 
+Legend: 
 - ✏️  100-499 citations, ✏️✏️ $\geq$ 500 citations
 - ⭐  100-249 stars, ⭐⭐ $\geq$ 250 stars
 
-Sorting: alphabetic order
-<br>
+Sorting: chronological/alphabetic order
+<br> 
 
 ### Literature reviews
 
