@@ -105,10 +105,10 @@ E --> EB["Hessian \n Approximation"]
 click CB "https://arxiv.org/abs/1706.05791"
 ```
 
-### Magnitude Based: Simple, Regularized.
+### MAGNITUDE BASED: Simple, Regularized.
 Under the hypothesis that smaller weights have a minor impact on the model accuracy, the weights that are smaller than a given threshold are pruned. To enforce the weight to be pruned, some regularization can be applied. Usually $L_1$ norm is better right after pruning while $L_2$ works better if the weights of the pruned network are fine-tuned. 
 
-### Variance Selection
+### VARIANCE SELECTION
 #### Inboud Pruning [[1]](#1)
 The input pruning method targets the number of channels on which each filter operates. The amount of information each channel brings is measured by the variance of the activation output of the specific channel.
 
@@ -129,7 +129,7 @@ $$ A = min_{A} \left(\sum_i || Y_i - A Y'_i) ||_2^2 \right)$$
 Where $Y_i$ is the output before pruning, $Y'_i$ is the output after pruning, and $i$ are the iterations on the input samples, each input sample producing different activations.  
 The operation of A is added to the network by introducing a convolution layer with filters of size 1 × 1, which contains the elements of A.
 
-### Entropy Based Pruning [[2]](#2)
+#### Entropy Based Pruning [[2]](#2)
 Entropy-based metric to evaluate the weakness of each channel: a larger entropy value means the system contains more information. First is used global average pooling to convert the output of layer $i$, which is a $c \times h \times w$ tensor, into a $1 \times c$ vector. In order to calculate the entropy, more output values need to be collected, which can be obtained using an evaluation set.
 Finally, we get a matrix $M \in R^{ n \times c}$, where $n$ is the number of images in the evaluation set, and $c$ is the channel number. For each channel $j$, we would pay attention to the distribution of $M[:,j]$. To compute the entropy value of this channel, we first divide it into $m$ different bins and calculate the probability of each bin. 
 The entropy is then computed as
@@ -138,7 +138,7 @@ $$ H_j = - \sum_i^m p_i log(p_i) $$
 
 Where, $p_i$ is the probability of bin $i$, $H_j$ is the entropy of channel $j$. Whenever one layer is pruned, the whole network is fine-tuned with one or two epochs to recover its performance slightly. Only after the final layer has been pruned, the network is fine-tuned carefully with many epochs.
 
-### APoZ [[3]](#3)
+#### APoZ [[3]](#3)
 It is defined Average Percentage of Zeros (APoZ) to measure the percentage of zero activations of a neuron after the ReLU mapping. $APoZ_c^{(i)}$ of the $c-th$ neuron in $i-th$ layer is defined as:
 
 $$ APoZ_c^{(i)} =  \frac{\sum_{k} \sum_{j} f(O_{c,j}^{(i)}(k))}{N \times M}$$
@@ -147,14 +147,14 @@ Where, $O_c^{(i)}$ denotes the output of the $c-th$ neuron in $i-th$ layer, $M$ 
 The higher mean APoZ also indicates more redundancy in a layer. Since a neural network has a multiplication-addition-activation computation process, a neuron which has its outputs mostly zeros will have very little contribution to the output of subsequent layers, as well as to the final results. Thus, we can remove those neurons without harming too much the overall accuracy of the network.  
 Empirically, it was found that by starting by trimming from a few layers with high mean APoZ, and then progressively trimming neighboring layers, it is possible to rapidly reduce the number of neurons while maintaining the performance of the original network. Pruning the neurons whose APoZ is larger than one standard derivation from the mean APoZ of the target trimming layer would produce good retraining results.
 
-### Filter Weight Summing [[4]](#4)
+#### Filter Weight Summing [[4]](#4)
 The relative importance of a filter in each layer is measured by calculating the sum of its absolute weights.
 
 $$ s_j = \sum |F_{i,j}|$$
 
 This value gives an expectation of the magnitude of the output feature map. Then each filter is sorted based on $s_j$, and $m$ are pruned together with the kernels in next layer corresponding to the pruned features. After a layer is pruned, the network is fine-tuned, and pruning is continued layer by layer.
 
-### Geometric Median [[5]](#5)
+#### Geometric Median [[5]](#5)
 The geometric median is used to get the common information of all the filters within the single ith layer:
 
 $$ x^{GM} = argmin_x \sum_{j'} || x - F_{i,j'} ||_2$$
@@ -173,6 +173,42 @@ $$ j'\in [1, N_{i+1}] $$
 
 Since the selected filter(s), $F_{i, x^* }$ , and left ones share the most common information. This indicates the information of the filter(s) $F_{i, x^* }$ could be replaced by others.
 
+### OPTIMIZATION BASED [[6]](#6)
+
+#### Greedy search pruning 
+    
+This method “starts from an empty network and greedily adds important neurons from the large network” of a pre-trained model. With this technique:
+- you should obtain better accuracy than the other way around
+    
+- you can prune also randomly weighted networks
+    
+Researches on the topic suggest not to then re-train the new sub-network, but just to fine-tune it “to leverage the information from the large model”. [[7]](#7)
+    
+#### Obd [[8]](#8)
+
+This technique dating back to 1989 has been further developed in new and better-performing methodologies, but we report it as it was a pillar in the pruning literature. The Optimal Brain Damage technique uses “second-derivative information to make a tradeoff between network complexity and training set error”, which in this case means “selectively deleting weights” based on “two terms: the ordinary training error” and “some measure of the network complexity”.
+
+#### Lasso [[9]](#9)
+    
+The Least Absolute Shrinkage and Selection Operator, and the extensions derived from it, compared to other techniques, perform pruning at a higher level. It acts at the level of weights, neurons as well as filters, creating a superior sparsity on the level of weights.
+    
+In this technique, the loss is constantly increased until some degree of sparsity is observed”; “there is no exact method for obtaining a satisfactory value”, and it depends also on the size of the dataset.
+    
+    
+
+### SENSITIVITY BASED [[10]](#10)
+
+Large networks might contain multiple connections that contribute only a small part to the overall accuracy. In addition, redundant connections could compromise the generalization capability that a deep network should have, or its efficiency in being trained especially on edges. By disabling connections between neurons selectively, we can reduce network connections and the number of operational needs for network training. Furthermore, the connection mask extracted can be reused for training the network from scratch, with only a small accuracy loss. [[11]](#11)
+
+The sensitivity measure is the probability of output inversions due to input variation with respect to overall input patterns. This kind of pruning can be repeated iteratively until no more can be removed under a given performance requirement. 
+
+#### Taylor expansion - first order (lighter than the following second order one) [[12]](#12)
+
+The weights and their gradients are used for ranking filters, which require far less memory consumption than feature maps. Element-wise product of weights and gradients is able to gather exactly the first-degree Taylor polynomial of corresponding feature map w.r.t loss through back-propagation, meaning it approximates the actual damage.
+
+#### Hessian approximation (HAP) - second order [[13]](#13)
+
+The HAP method is a structured pruning method that cuts channels based on their second-order sensitivity, which measures the flatness/sharpness of the lost landscape. Channels are sorted based on this metric, and only insensitive channels are pruned.
 
 ## References
 
@@ -191,6 +227,31 @@ Li, H., Kadav, A., Durdanovic, I., Samet, H., & Graf, H. P. ["Pruning filters fo
 
 <a id ="5">[5]</a>
 He, Y., Liu, P., Wang, Z., Hu, Z., & Yang, Y. . ["Filter pruning via geometric median for deep convolutional neural networks acceleration"](https://arxiv.org/abs/1811.00250). In Proceedings of the IEEE/CVF conference on computer vision and pattern recognition (2019).
+
+<a id ="6">[6]</a>
+Ekbom, L. .["Exploring the LASSO as a Pruning Method"](https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8993061&fileOId=8993068). (2019).
+
+<a id ="7">[7]</a>
+Ye, M., Lemeng, W., & Qiang, L. . ["Greedy optimization provably wins the lottery: Logarithmic number of winning tickets is enough."](https://par.nsf.gov/servlets/purl/10276253). Advances in Neural Information Processing Systems 33 (2020)
+  
+<a id ="8">[8]</a>
+LeCun, Y., Denver, J., & Solla, S.. ["Optimal brain damage."](https://proceedings.neurips.cc/paper/1989/hash/6c9882bbac1c7093bd25041881277658-Abstract.html). Advances in neural information processing systems 2 (1989).
+
+<a id ="9">[9]</a>
+Ekbom, L. . ["Exploring the LASSO as a Pruning Method."](https://lup.lub.lu.se/luur/download?func=downloadFile&recordOId=8993061&fileOId=8993068). (2019).
+
+<a id ="10">[10]</a>
+Dajie Cooper, Y. . ["Sensitivity Based Network Pruning: A Modern Perspective."](http://users.cecs.anu.edu.au/~Tom.Gedeon/conf/ABCs2018/paper/ABCs2018_paper_135.pdf).
+
+<a id ="11">[11]</a>
+Xiaoqin, Z. et al. . ["A sensitivity-based approach for pruning architecture of Madalines."](https://www.researchgate.net/publication/220372395_A_sensitivity-based_approach_for_pruning_architecture_of_Madalines).
+ Neural Computing and Applications 18.8 (2009).
+
+<a id ="12">[12]</a>
+Mengqing, W. . ["Pruning Convolutional Filters with First Order Taylor Series Ranking."](http://users.cecs.anu.edu.au/~Tom.Gedeon/conf/ABCs2018/paper/ABCs2018_paper_53.pdf). 
+
+<a id ="13">[13]</a>
+Shixing, Y. et al. . ["Hessian-aware pruning and optimal neural implant."](https://openaccess.thecvf.com/content/WACV2022/papers/Yu_Hessian-Aware_Pruning_and_Optimal_Neural_Implant_WACV_2022_paper.pdf). Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision. (2022).
 
 
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
