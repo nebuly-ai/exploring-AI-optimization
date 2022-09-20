@@ -7,6 +7,8 @@
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/171454644-d4b980bc-15ab-4a31-847c-75c36c5bd96b.png">
 
 # Pruning
+Find below an overview of pruning techniques, while [here](https://github.com/nebuly-ai/exploring-AI-optimization/blob/main/pruning-resources.md) a curated collection of resources on the topic.
+
 The pruning algorithm usually can be divided in three main parts: 
 * The selection of the parameters to prune. 
 * The methodology to perform the pruning. 
