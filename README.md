@@ -9,7 +9,8 @@
 # Exploring AI optimization
 This library aims to become a curated list of awesome material (cool papers, tutorials, courses, etc.) on optimization techniques to make artificial intelligence faster and more efficient 🚀 
 
-Among the best acceleration techniques for deep learning are:
+Resources on the best acceleration techniques for deep learning.
+- [x] [Weekly insights from the best papers on AI](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/weekly-insights.md)
 - [x] **Quantization** [[Overview](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-overview.md), [Resources](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/quantization-resources.md)]
 - [x] **Pruning** [[Overview](https://github.com/nebuly-ai/learning-AI-optimization/blob/main/pruning-overview.md), [Resources](https://github.com/nebuly-ai/exploring-AI-optimization/blob/main/pruning-resources.md)]
 - [ ] **Distillation** [Overview, Resources]
