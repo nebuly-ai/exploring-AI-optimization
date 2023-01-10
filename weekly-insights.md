@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="www.nebuly.com/towards-efficient-ai">Subscribe to the newsletter</a> •
+  <a href="https://www.nebuly.com/towards-efficient-ai">Subscribe to the newsletter</a> •
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
   <a href="#contribute">Contribute to the library</a>
 </p>
@@ -23,7 +23,7 @@ Don't hesitate to [open an issue](https://github.com/nebuly-ai/exploring-AI-opti
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/211585773-c7610d6f-634c-4ba7-957c-72c3fb5af999.png">
 
 <p align="center">
-  <a href="www.nebuly.com/towards-efficient-ai">Subscribe to the newsletter</a> •
+  <a href="https://www.nebuly.com/towards-efficient-ai">Subscribe to the newsletter</a> •
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
   <a href="#contribute">Contribute to the library</a>
 </p>
