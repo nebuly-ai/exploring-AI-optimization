@@ -1,4 +1,5 @@
 <p align="center">
+  <a href="https://discord.gg/RbeQMu886J">Subscribe to the newsletter</a> •
   <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
   <a href="#contribute">Contribute to the library</a>
 </p>
@@ -48,6 +49,7 @@ Do you want to meet the contributors of this libraries and other developers who 
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/182182529-f86afbf2-db16-434d-b907-a80838ffebd2.png">
 
 <p align="center">
-  <a href="https://discord.gg/RbeQMu886J">Join the community</a> •
+  <a href="https://discord.gg/RbeQMu886J">Subscribe to the newsletter</a> •
+  <a href="www.nebuly.com/towards-efficient-ai">Join the community</a> •
   <a href="#contribute">Contribute to the library</a>
 </p>
