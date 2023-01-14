@@ -19,6 +19,12 @@ Don't hesitate to [open an issue](https://github.com/nebuly-ai/exploring-AI-opti
 - HELM conducts a large-scale evaluation of 30 prominent language models across 42 different scenarios, including 21 that have not previously been used in mainstream LM evaluation. The results of the evaluation and all raw model prompts and completions are made publicly available.
 
 
+## Week #2: [Explanations from Large Language Models Make Small Reasoners Better](https://arxiv.org/pdf/2210.06726.pdftw)
+
+- Tuning and inference of LLMs are not trivial in terms of computational cost, so creating smaller models that can be used to solve specific tasks using LLMs as teachers can have several advantages.
+- In this case, an LLM is used to produce chain reasoning that is then validated by comparing the final what answer from the LLM with that provided by dataset y. A new dataset {x, e, y} of explanations is then created from a smaller dataset {x, y} containing only question and answer; the new dataset of examples is used to train a smaller T5 3B model to produce the answer along with the chain of thought.
+- The results show that the resulting model has comparable performance on the Common Sense Question Answering dataset of GPT3 using Zero-Shot-CoT.
+
 <img height="25" width="100%" src="https://user-images.githubusercontent.com/83510798/211585773-c7610d6f-634c-4ba7-957c-72c3fb5af999.png">
 
 <p align="center">
