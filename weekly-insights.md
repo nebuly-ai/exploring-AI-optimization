@@ -12,6 +12,13 @@ Welcome to our library of the best insights from the best papers on AI and machi
 Don't hesitate to [open an issue](https://github.com/nebuly-ai/exploring-AI-optimization/issues) and submit a paper that you found interesting and the 3 key takeaways. 
 
 
+## Week #4: [MusicLM: Generating Music From Text](https://arxiv.org/pdf/2301.11325.pdf)
+
+- MusicLM is a text-conditioned generative model that can produce high-quality music. The model is trained on a synthetic dataset of audio pairs with matching melodies and different acoustics, as well as data pairs of people humming and singing. The text description is used as a conditioning signal to guide the music generation process.
+- The model is able to generate music that follows the target melody contained in the input audio clip, while also being faithful to the text description. MusicLM is capable of generating long, coherent audio sequences that are semantically plausible and consistent with the text description. The model can also be used in "story mode," where the text description changes over time, leading to smooth transitions in the generated music.
+- There are several risks associated with MusicLM and its use-case, such as the reflection of biases present in the training data and the potential misappropriation of creative content. The authors conducted a thorough study of memorization and found that only a small fraction of examples was memorized exactly.
+
+
 ## Week #3: [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://arxiv.org/pdf/2201.11903.pdf)
 
 - The ability of a Large Language Model (LLM) to produce a better quality response is closely related to the prompt used. For example, providing the model with an example or a chain of thoughts (CoT) as a prompt produces a higher quality response without training; this type of technique is usually called InContextLearning, since the model learns from the provided context instead of updating parameters.
