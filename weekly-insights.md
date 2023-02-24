@@ -11,6 +11,14 @@
 Welcome to our library of the best insights from the best papers on AI and machine learning. A new paper will be added every Friday. <br />
 Don't hesitate to [open an issue](https://github.com/nebuly-ai/exploring-AI-optimization/issues) and submit a paper that you found interesting and the 3 key takeaways. 
 
+
+## Week #7: [Symbolic Discovery of Optimization Algorithms](https://arxiv.org/pdf/2302.06675.pdf)
+
+- The paper presents a method to discover optimization algorithms for deep neural network training by formulating algorithm discovery as program search, leveraging efficient search techniques to explore an infinite and sparse program space.
+- The method introduces program selection and simplification strategies to bridge the large generalization gap between proxy and target tasks.
+- The discovered algorithm, Lion (EvoLved Sign Momentum), is more memory-efficient than Adam and achieves better performance on a variety of tasks, including image classification, vision-language contrastive learning, diffusion models, autoregressive, masked language modeling, and fine-tuning.
+
+
 ## Week #6: [Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/pdf/2302.05543.pdf)
 
 - The paper presents a neural network architecture called ControlNet that can control large image diffusion models (like Stable Diffusion) to learn task-specific input conditions.
