@@ -12,6 +12,20 @@ Welcome to our library of the best insights from the best papers on AI and machi
 Don't hesitate to [open an issue](https://github.com/nebuly-ai/exploring-AI-optimization/issues) and submit a paper that you found interesting and the 3 key takeaways. 
 
 
+## Week #9: [Language Is Not All You Need: Aligning Perception with Language Models](https://arxiv.org/pdf/2302.06675.pdf)
+
+- The paper introduces KOSMOS-1, a Multimodal Large Language Model (MLLM) that can perceive general modalities, follow instructions (i.e., zero-shot learning), and learn in context (i.e., few-shot learning).
+- KOSMOS-1 was trained from scratch on web-scale multimodal corpora, including arbitrarily interleaved text and images, image-caption pairs, and text data, and achieved impressive performance on various tasks, such as language understanding, generation, perception-language tasks, and vision tasks.
+- MLLMs benefit from cross-modal transfer, i.e., transfer knowledge from language to multimodal, and from multimodal to language. Additionally, the paper introduces a dataset of Raven IQ test, which diagnoses the nonverbal reasoning capability of MLLMs.
+
+
+## Week #8: [Big Little Transformer Decoder](https://arxiv.org/pdf/2302.06675.pdf)
+
+- The paper presents a method to reduce the latency of autoregressive transformer models while preserving accuracy.  The framework consists of a smaller model that is assisted in generation by a larger model.
+- The framework is built around the observation that by correcting only the erroneous tokens of the smaller model using the prediction of the larger model, it is possible to preserve the accuracy of the latter. Based on this observation, a policy is created that decides when the smaller model needs help to generate.
+- Only the smaller model is used as an autoregressive model, while the larger one is used to predict the tokens of the whole produced sequence, increasing the arithmetic intensity and thus reducing the overall latency of the generation.
+
+
 ## Week #7: [Symbolic Discovery of Optimization Algorithms](https://arxiv.org/pdf/2302.06675.pdf)
 
 - The paper presents a method to discover optimization algorithms for deep neural network training by formulating algorithm discovery as program search, leveraging efficient search techniques to explore an infinite and sparse program space.
